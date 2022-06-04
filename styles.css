@@ -1,0 +1,208 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@500;700&display=swap');
+
+:root {
+  --title: hsl(217, 19%, 35%);
+  --description: hsl(214, 17%, 51%);
+  --grayish-blue: hsl(212, 23%, 69%);
+  --bg: hsl(210, 46%, 95%);
+}
+
+* {
+  font-family: 'Manrope', sans-serif;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background-color: var(--bg);
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.card {
+  max-width: 20.625rem;
+  background-color: white;
+  border-radius: 0.625rem;
+  overflow: hidden;
+  box-shadow: 0px 0.625rem 1.25rem -1.25rem var(--description);
+}
+
+.card__img {
+  height: 13.75rem;
+  overflow: hidden;
+}
+
+.img {
+  width: 100%;
+}
+
+.card__body {
+  padding: 2.25rem 2.25rem 0;
+}
+
+.card__body .title {
+  margin: 0;
+  font-size: 1rem;
+  color: var(--title);
+  line-height: 1.5;
+  font-weight: 700;
+}
+
+.card__body .description {
+  font-size: 0.8125rem;
+  color: var(--description);
+  line-height: 1.6;
+}
+
+.card__footer {
+  position: relative;
+}
+
+.info {
+  padding: 0px 2.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.info__person {
+  display: flex;
+  align-items: center;
+}
+
+.info__person .avatar {
+  max-width: 2.5rem;
+  border-radius: 1.25rem;
+  margin-right: 1.25rem;
+}
+
+.name-date {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.5;
+  font-size: 0.8125rem;
+  color: var(--grayish-blue);
+}
+
+.name {
+  font-weight: 700;
+  color: var(--title);
+}
+
+.icon-share {
+  background-color: var(--bg);
+  padding: 0.625rem;
+  border-radius: 3.125rem;
+  position: relative;
+  z-index: 2;
+}
+
+.icon-share-active {
+  background-color: var(--description);
+  padding: 0.625rem;
+  border-radius: 3.125rem;
+}
+
+.icon-share:hover {
+  cursor: pointer;
+}
+
+.share {
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--title);
+  padding: 0.9375rem 2.25rem;
+  transition: opacity 0.5s;
+}
+
+.show {
+  opacity: 1;
+}
+
+.share__icons {
+  display: flex;
+  align-items: center;
+  gap: 0.9375rem;
+  font-size: 0.8125rem;
+  letter-spacing: 0.3125rem;
+  color: var(--grayish-blue);
+}
+
+.arrow-down {
+  position: absolute;
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+
+@media (min-width: 56.25em) {
+  .card {
+    display: grid;
+    grid-template-columns: 19.0625rem 1.5fr;
+    max-width: 45.75rem;
+    height: 18.75rem;
+  }
+
+  .card__img {
+    width: 100%;
+    grid-row: 1/3;
+    height: 100%;
+  }
+
+  .img {
+    width: auto;
+    height: 100%;
+  }
+
+  .card {
+    overflow: visible;
+  }
+
+  .card__body .title {
+    font-size: 1.25rem;
+  }
+
+  .card__footer {
+    position: relative;
+    padding: 0px 0px 1.25rem;
+  }
+
+  .share {
+    position: absolute;
+    border-radius: 0.625rem;
+    opacity: 0;
+    top: -4.5rem;
+    left: 15.9375rem;
+    right: -4.375rem;
+    bottom: 6.375rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--title);
+    padding: 0.9375rem 2.25rem;
+    transition: opacity 0.5s;
+  }
+
+  .arrow-down {
+    right: 2.375rem;
+    bottom: 5.4375rem;
+    border-left: 0.9375rem solid transparent;
+    border-right: 0.9375rem solid transparent;
+    border-top: 0.9375rem solid var(--title);
+  }
+
+  .show {
+    opacity: 1;
+  }
+}
